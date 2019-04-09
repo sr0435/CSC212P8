@@ -178,7 +178,7 @@ public class CheckSpelling {
 		//timeLookup(listOfWords, hashOfWords);
 		//timeLookup(listOfWords, bsl);
 		//timeLookup(listOfWords, trie);
-		//timeLookup(listOfWords, hm100k);
+		timeLookup(listOfWords, hm100k);
 		System.out.println("\n");
 		
 		// checks how many words in misspelled aren't in the dictionary
@@ -223,7 +223,6 @@ public class CheckSpelling {
 		// --- print statistics about the data structures:
 		System.out.println("Count-Nodes: "+trie.countNodes());
 		System.out.println("Count-Items: "+hm100k.size());
-
 		System.out.println("Count-Collisions[100k]: "+hm100k.countCollisions());
 		System.out.println("Count-Used-Buckets[100k]: "+hm100k.countUsedBuckets());
 		System.out.println("Load-Factor[100k]: "+hm100k.countUsedBuckets() / 100000.0);
