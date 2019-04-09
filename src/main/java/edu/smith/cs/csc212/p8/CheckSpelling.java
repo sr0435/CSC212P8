@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -101,7 +102,7 @@ public class CheckSpelling {
 				output.add(wrong);
 			}
 		}
-		// TODO: select numSamples * fractionYes words from yesWords; create the rest as no words.
+		// : select numSamples * fractionYes words from yesWords; create the rest as no words.
 		return output;
 	}
 	
