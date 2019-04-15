@@ -123,6 +123,14 @@ public class CheckSpelling {
 		for (String w : listOfWords) {
 			hm100k.add(w);
 		}
+		long startLookup = System.nanoTime();
+		SortedStringListSet bsll = new SortedStringListSet(Arrays.asList("banana", "apple","grape","orange",
+				"pear", "grapefruit","watermelon", "canteloupe","kiwi", "mango","lychee","guava"));
+		//System.out.println(bsll);
+		//System.out.println(bsll.contains("apple3392"));
+		System.out.println(bsl.contains("as"));
+		long endLookup = System.nanoTime();
+		System.out.println((endLookup-startLookup)/1e9 + " seconds");
 		
 		// --- Testing the insert speed
 			// HashSet and TreeSet constructed with input data
@@ -178,7 +186,7 @@ public class CheckSpelling {
 		//timeLookup(listOfWords, hashOfWords);
 		//timeLookup(listOfWords, bsl);
 		//timeLookup(listOfWords, trie);
-		timeLookup(listOfWords, hm100k);
+		//timeLookup(listOfWords, hm100k);
 		System.out.println("\n");
 		
 		// checks how many words in misspelled aren't in the dictionary
