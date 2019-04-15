@@ -95,6 +95,7 @@ public class LLHash extends AbstractSet<String> {
 	 * @return the number of buckets with more than one value.
 	 */
 	public int countCollisions() {
+		// takes the number of buckets and checks if there is >1 item in them
 		int count = 0;
 		for (Bucket b : this.buckets) {
 			if (b.values.size()>1) {

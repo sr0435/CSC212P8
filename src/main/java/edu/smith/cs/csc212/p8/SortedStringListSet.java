@@ -55,22 +55,27 @@ public class SortedStringListSet extends AbstractSet<String> {
 		
 		int mid = (start + end) / 2;
 		String midVal = data.get(mid);
+		// catches if the query isn't in the list
 	    if (start > end) {
 	        return -1;
 	    }
+	    // first checks if the query is the same as the mid value
 	    if (midVal.compareTo(query)==0) {
-	    	System.out.println(midVal);
 	        return mid;
 	    } else {
+	    	// if it isn't then it's either higher or lower
+	    	// we change the start/end and then recurse
 	        if (midVal.compareTo(query) < 0) {
-	            return binarySearch(query, mid+1,end);
+	        	start = mid+1;
+	            return binarySearch(query, start,end);
 	        }
 	        else {
-	            return binarySearch(query,start,mid-1);
+	        	end = mid-1;
+	            return binarySearch(query,start,end);
 	        }
 	    }
-		
-		// TODO: replace this with your own binary search.
+
+		// : replace this with your own binary search.
 		// end--;
 		// System.out.println("start: " + start);
 		// System.out.println("end: " + end);

@@ -119,19 +119,25 @@ public class CharTrie extends AbstractSet<String> {
 		 * @return the count of nodes that exist in the Trie, starting from here.
 		 */ 
 		public int countNodes() {
+			// counts the root
 			int count = 1;
 			int count2 = 0;
 			for (int i=0; i<this.links.length; i++) {
+				// checks if this node has a child at this i
 				if (this.links[i] != null) {
+					// if the node's child's child exists, recurse
 					if (this.links[i].links[i]!=null) { 
 						count2 = this.links[i].countNodes();
+						// if this is the second to last level, then add the child's children to your total
 						count += count2;
 					}
 					else {
+						// if this node doesn't have grandchildren, then just up the count by one
 						count++;
 					}
 				}
 				else {
+					// if this node doesn't have a child, then skip it
 					continue;
 				}	
 			}
