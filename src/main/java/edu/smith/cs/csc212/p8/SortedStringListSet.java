@@ -52,7 +52,8 @@ public class SortedStringListSet extends AbstractSet<String> {
 	 * @return the index found, OR negative if not found.
 	 */
 	private int binarySearch(String query, int start, int end) {
-		
+		// used https://ai.googleblog.com/2006/06/extra-extra-read-all-about-it-nearly.html
+		// as a guide for this method
 		int mid = (start + end) / 2;
 		String midVal = data.get(mid);
 		// catches if the query isn't in the list
